@@ -50,10 +50,10 @@ namespace projeto_final.Controllers
         // GET: SaidaProduto/Create
         public IActionResult Create()
         {
-            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Id");
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "Id");
-            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "Id");
-            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "Id");
+            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "ClienteNome");
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome");
+            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "TipoSaidaDescricao");
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "UsuarioNome");
             return View();
         }
 
@@ -70,10 +70,10 @@ namespace projeto_final.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Id", saidaProduto.ClienteId);
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "Id", saidaProduto.ProdutoId);
-            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "Id", saidaProduto.TipoSaidaId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "Id", saidaProduto.UsuarioId);
+            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "ClienteNome", saidaProduto.ClienteId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", saidaProduto.ProdutoId);
+            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "TipoSaidaDescricao", saidaProduto.TipoSaidaId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "UsuarioNome", saidaProduto.UsuarioId);
             return View(saidaProduto);
         }
 
@@ -90,10 +90,10 @@ namespace projeto_final.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Id", saidaProduto.ClienteId);
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "Id", saidaProduto.ProdutoId);
-            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "Id", saidaProduto.TipoSaidaId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "Id", saidaProduto.UsuarioId);
+            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "ClienteNome", saidaProduto.ClienteId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", saidaProduto.ProdutoId);
+            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "TipoSaidaDescricao", saidaProduto.TipoSaidaId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "UsuarioNome", saidaProduto.UsuarioId);
             return View(saidaProduto);
         }
 
@@ -129,10 +129,10 @@ namespace projeto_final.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Id", saidaProduto.ClienteId);
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "Id", saidaProduto.ProdutoId);
-            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "Id", saidaProduto.TipoSaidaId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "Id", saidaProduto.UsuarioId);
+            ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "ClienteNome", saidaProduto.ClienteId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", saidaProduto.ProdutoId);
+            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "TipoSaidaDescricao", saidaProduto.TipoSaidaId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "UsuarioNome", saidaProduto.UsuarioId);
             return View(saidaProduto);
         }
 

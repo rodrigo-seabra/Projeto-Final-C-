@@ -47,7 +47,7 @@ namespace projeto_final.Controllers
         // GET: Cidade/Create
         public IActionResult Create()
         {
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id");
+            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "EstadoNome");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace projeto_final.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
+            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "EstadoNome", cidade.EstadoId);
             return View(cidade);
         }
 
@@ -81,7 +81,7 @@ namespace projeto_final.Controllers
             {
                 return NotFound();
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
+            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "EstadoNome", cidade.EstadoId);
             return View(cidade);
         }
 
@@ -117,7 +117,7 @@ namespace projeto_final.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
+            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "EstadoNome", cidade.EstadoId);
             return View(cidade);
         }
 

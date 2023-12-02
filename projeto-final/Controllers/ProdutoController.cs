@@ -48,8 +48,8 @@ namespace projeto_final.Controllers
         // GET: Produto/Create
         public IActionResult Create()
         {
-            ViewData["FornecedorId"] = new SelectList(_context.Fornecedor, "Id", "Id");
-            ViewData["TipoProdutoId"] = new SelectList(_context.TipoProduto, "Id", "Id");
+            ViewData["FornecedorId"] = new SelectList(_context.Fornecedor, "Id", "FornecedorNome");
+            ViewData["TipoProdutoId"] = new SelectList(_context.TipoProduto, "Id", "TipoProdutoDescricao");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace projeto_final.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FornecedorId"] = new SelectList(_context.Fornecedor, "Id", "Id", produto.FornecedorId);
-            ViewData["TipoProdutoId"] = new SelectList(_context.TipoProduto, "Id", "Id", produto.TipoProdutoId);
+            ViewData["FornecedorId"] = new SelectList(_context.Fornecedor, "Id", "FornecedorNome", produto.FornecedorId);
+            ViewData["TipoProdutoId"] = new SelectList(_context.TipoProduto, "Id", "TipoProdutoDescricao", produto.TipoProdutoId);
             return View(produto);
         }
 
@@ -84,8 +84,8 @@ namespace projeto_final.Controllers
             {
                 return NotFound();
             }
-            ViewData["FornecedorId"] = new SelectList(_context.Fornecedor, "Id", "Id", produto.FornecedorId);
-            ViewData["TipoProdutoId"] = new SelectList(_context.TipoProduto, "Id", "Id", produto.TipoProdutoId);
+            ViewData["FornecedorId"] = new SelectList(_context.Fornecedor, "Id", "FornecedorNome", produto.FornecedorId);
+            ViewData["TipoProdutoId"] = new SelectList(_context.TipoProduto, "Id", "TipoProdutoDescricao", produto.TipoProdutoId);
             return View(produto);
         }
 
@@ -121,8 +121,8 @@ namespace projeto_final.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FornecedorId"] = new SelectList(_context.Fornecedor, "Id", "Id", produto.FornecedorId);
-            ViewData["TipoProdutoId"] = new SelectList(_context.TipoProduto, "Id", "Id", produto.TipoProdutoId);
+            ViewData["FornecedorId"] = new SelectList(_context.Fornecedor, "Id", "FornecedorNome", produto.FornecedorId);
+            ViewData["TipoProdutoId"] = new SelectList(_context.TipoProduto, "Id", "TipoProdutoDescricao", produto.TipoProdutoId);
             return View(produto);
         }
 

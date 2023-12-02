@@ -47,7 +47,7 @@ namespace projeto_final.Controllers
         // GET: EntradaProduto/Create
         public IActionResult Create()
         {
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "Id");
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace projeto_final.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "Id", entradaProduto.ProdutoId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", entradaProduto.ProdutoId);
             return View(entradaProduto);
         }
 
@@ -81,7 +81,7 @@ namespace projeto_final.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "Id", entradaProduto.ProdutoId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", entradaProduto.ProdutoId);
             return View(entradaProduto);
         }
 
@@ -117,7 +117,7 @@ namespace projeto_final.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "Id", entradaProduto.ProdutoId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", entradaProduto.ProdutoId);
             return View(entradaProduto);
         }
 

@@ -47,7 +47,7 @@ namespace projeto_final.Controllers
         // GET: Estado/Create
         public IActionResult Create()
         {
-            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "Id");
+            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "PaisNome");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace projeto_final.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "Id", estado.PaisId);
+            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "PaisNome", estado.PaisId);
             return View(estado);
         }
 
@@ -81,7 +81,7 @@ namespace projeto_final.Controllers
             {
                 return NotFound();
             }
-            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "Id", estado.PaisId);
+            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "PaisNome", estado.PaisId);
             return View(estado);
         }
 
@@ -117,7 +117,7 @@ namespace projeto_final.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "Id", estado.PaisId);
+            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "PaisNome", estado.PaisId);
             return View(estado);
         }
 
