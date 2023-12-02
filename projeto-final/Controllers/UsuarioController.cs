@@ -18,6 +18,29 @@ namespace projeto_final.Controllers
             _context = context;
         }
 
+        public IActionResult Login(Usuario usuario)
+        {
+            if (usuario.UsuarioEmail == "")
+                return View();
+            else
+            {
+                var verificaLogin = _context.Usuario
+                    .Where(x => x.UsuarioEmail == usuario.UsuarioEmail
+                                && x.UsuarioSenha == usuario.UsuarioSenha)
+                    .FirstOrDefault();
+
+                if (verificaLogin == null)
+                {
+                    ViewBag.Mensagem = "Usuário ou Senha não existe.";
+                    return View();
+                }
+                else
+                {
+                    return View("~/Views/Home/Index.cshtml");
+                }
+            }
+        }
+
         // GET: Usuario
         public async Task<IActionResult> Index()
         {
