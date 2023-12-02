@@ -43,16 +43,16 @@
                 @Html.DisplayFor(modelItem => item.SaidaProdutoQuantidade)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Produto.Id)
+                @Html.DisplayFor(modelItem => item.Produto.ProdutoNome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Id)
+                @Html.DisplayFor(modelItem => item.Usuario.UsuarioNome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cliente.Id)
+                @Html.DisplayFor(modelItem => item.Cliente.ClienteNome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoSaida.Id)
+                @Html.DisplayFor(modelItem => item.TipoSaida.TipoSaidaDescricao)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
