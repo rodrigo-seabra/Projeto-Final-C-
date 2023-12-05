@@ -18,6 +18,13 @@ namespace projeto_final.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        [ActionName("Relatorio")]
+        public ActionResult Relatorio()
+        {
+            return View();
+        }
+
         // GET: EntradaProduto
         public async Task<IActionResult> Index()
         {

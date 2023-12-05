@@ -1,11 +1,26 @@
+h1{
+    text-align:center;
+}
+section{
+    display:flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
 .card {
+    text-align: center;
     width: 190px;
     height: 254px;
     border-radius: 20px;
     background: #f5f5f5;
     position: relative;
     padding: 1.8rem;
-    border: 2px solid #c3c6ce;
+    border: 2px solid #00838d;
     transition: 0.5s ease-out;
     overflow: visible;
 }
@@ -23,7 +38,7 @@
     width: 60%;
     border-radius: 1rem;
     border: none;
-    background-color: #008bf8;
+    background-color: #00838d;
     color: #fff;
     font-size: 1rem;
     padding: .5rem 1rem;
@@ -35,22 +50,26 @@
 }
 
 .text-body {
+    text-align:center;
     color: rgb(134, 134, 134);
 }
 
 /*Text*/
 .text-title {
+    text-align: center;
     font-size: 1.5em;
     font-weight: bold;
 }
 
 /*Hover*/
 .card:hover {
-    border-color: #008bf8;
+    border-color: #00838d;
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+
 }
 
     .card:hover .card-button {
         transform: translate(-50%, 50%);
         opacity: 1;
+        color: white;
     }
