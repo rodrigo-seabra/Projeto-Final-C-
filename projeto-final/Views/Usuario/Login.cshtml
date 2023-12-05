@@ -5,30 +5,35 @@
     Layout = null;
 }
 
-<h1>Login</h1>
-<h4>Digite o email e a senha para realizar o login.</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Login">
+<link href="~/css/LoginStyle.css" rel="stylesheet" />
+
+<div class="form-ui">
+    <form asp-action="Login" class="form">
+        <div class="form-body">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UsuarioEmail" class="control-label"></label>
-                <input asp-for="UsuarioEmail" class="form-control" />
-                <span asp-validation-for="UsuarioEmail" class="text-danger"></span>
+            <div class="welcome-lines">
+                <div class="welcome-line-1">Login</div>
+                <div class="welcome-line-2">Digite o email e a senha para realizar o login.</div>
             </div>
-            <div class="form-group">
-                <label asp-for="UsuarioSenha" class="control-label"></label>
-                <input asp-for="UsuarioSenha" class="form-control" />
-                <span asp-validation-for="UsuarioSenha" class="text-danger"></span>
+            <div class="input-area">
+                <div class="form-inp">
+                    <input asp-for="UsuarioEmail" class="input-field" placeholder="Digite seu email" type="text" />
+                    <label asp-for="UsuarioEmail" class="input-label" style="display:none"></label>
+                    <span asp-validation-for="UsuarioEmail" class="text-danger"></span>
+                </div>
+                <div class="form-inp">
+                    <input asp-for="UsuarioSenha" class="input-field" placeholder="Digite sua senha" type="password" />
+                    <label asp-for="UsuarioSenha" class="input-label" style="display:none"></label>
+                    <span asp-validation-for="UsuarioSenha" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="ENTRAR" class="btn btn-primary" />
+            <div class="submit-button-cvr">
+                <button class="submit-button" type="submit">ENTRAR</button>
             </div>
             <br />
-            <h3>@ViewBag.Mensagem</h3>
-        </form>
-    </div>
+            <div>@ViewBag.Mensagem</div>
+        </div>
+    </form>
 </div>
 
 @section Scripts {

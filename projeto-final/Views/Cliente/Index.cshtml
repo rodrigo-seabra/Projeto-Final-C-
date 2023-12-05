@@ -4,41 +4,42 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Cliente</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn-success">Adicionar novo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ClienteNome)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClienteDataNascimento)
+                Data de nascimento
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClienteCpf)
+               CPF
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClienteEndereco)
+                Endereço
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClienteNumeroCasa)
+                Número da casa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClienteBairro)
+                Bairro
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClienteCep)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ClienteTelefone)
+                CEP
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cidade)
             </th>
+            <th>
+                Telefone
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -49,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.ClienteNome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ClienteDataNascimento)
+                    @Html.DisplayFor(modelItem => item.ClienteDataNascimento)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ClienteCpf)
@@ -67,15 +68,16 @@
                 @Html.DisplayFor(modelItem => item.ClienteCep)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ClienteTelefone)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Cidade.CidadeNome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.ClienteTelefone)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detailhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
             </td>
         </tr>
 }
