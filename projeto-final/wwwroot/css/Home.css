@@ -1,8 +1,11 @@
 h1{
+    margin-top: 2.5rem;
     font-weight:bold;
 }
 
-section{
+
+
+section {
     display: flex;
     justify-content: center;
     gap: 0.5rem;

@@ -22,3 +22,24 @@ body {
     position: fixed;
     bottom:0;
 }
+
+.creatediv{
+    text-align:center;
+}
+
+.createbtn {
+    margin: 1rem auto 1rem auto;
+    background-color: #00838d;
+    border: none;
+}
+
+h1{
+    text-align:center;
+}
+ .row{
+     display:flex;
+     flex-direction:column;
+     justify-content:center;
+     align-content:center;
+     align-items: center;
+ }
