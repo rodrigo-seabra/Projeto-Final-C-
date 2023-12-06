@@ -53,9 +53,9 @@ namespace projeto_final.Controllers
         // GET: Usuario
         public async Task<IActionResult> Index()
         {
-              return _context.Usuario != null ? 
-                          View(await _context.Usuario.ToListAsync()) :
-                          Problem("Entity set 'Contexto.Usuario'  is null.");
+            return _context.Usuario != null ?
+                        View(await _context.Usuario.ToListAsync()) :
+                        Problem("Entity set 'Contexto.Usuario'  is null.");
         }
 
         // GET: Usuario/Details/5
@@ -141,6 +141,10 @@ namespace projeto_final.Controllers
 
             if (ModelState.IsValid)
             {
+                var salt = BCrypt.Net.BCrypt.GenerateSalt();
+                // Gere o hash da senha usando bcrypt e o salt
+                var senhaHash = BCrypt.Net.BCrypt.HashPassword(usuario.UsuarioSenha, salt);
+                usuario.UsuarioSenha = senhaHash;
                 try
                 {
                     _context.Update(usuario);
@@ -194,14 +198,14 @@ namespace projeto_final.Controllers
             {
                 _context.Usuario.Remove(usuario);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UsuarioExists(int id)
         {
-          return (_context.Usuario?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Usuario?.Any(e => e.Id == id)).GetValueOrDefault();
         }
         public bool Autenticar(Usuario usuario)
         {
@@ -222,4 +226,3 @@ namespace projeto_final.Controllers
     }
 
 }
-

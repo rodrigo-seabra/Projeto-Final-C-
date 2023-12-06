@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<projeto_final.Models.TipoProduto>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tipos de produtos";
 }
 
-<h1>Index</h1>
+<h1>Tipos de produtos</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<button class="btn-success">
+    <a asp-action="Create" class="text-white text-decoration-none">Adicionar um novo tipo</a>
+</button>
 <table class="table">
     <thead>
         <tr>
@@ -25,9 +25,9 @@
                 @Html.DisplayFor(modelItem => item.TipoProdutoDescricao)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
             </td>
         </tr>
 }
