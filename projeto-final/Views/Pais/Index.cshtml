@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<projeto_final.Models.Pais>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Países";
 }
 
-<h1>Países</h1>
-
-<button class="btn-success"> 
-    <a asp-action="Create" class="text-decoration-none text-white" >Adicionar um outro país</a>
-</button>
+<div class="title mt-4 mb-4">
+    <h1>Países</h1>
+    <button class="btn btn-success mt-2">
+        <a asp-action="Create" class="text-decoration-none text-white">Adicionar país</a>
+    </button>
+</div>
 <table class="table">
     <thead>
         <tr>

@@ -4,11 +4,14 @@
     ViewData["Title"] = "Entradas";
 }
 
-<h1>Entrada</h1>
 
-<p>
-    <a asp-action="Create">Adicionar Entrada</a>
-</p>
+
+<div class="title mt-4 mb-4">
+    <h1>Entrada de produto</h1>
+    <button class="btn btn-success mt-2">
+        <a asp-action="Create" class="text-decoration-none text-white">Adicionar nova entrada</a>
+    </button>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -37,8 +40,8 @@
                 @Html.DisplayFor(modelItem => item.Produto.ProdutoNome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Destalhes</a> 
             </td>
         </tr>
 }

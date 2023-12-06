@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<projeto_final.Models.Cliente>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Clientes";
 }
 
-<h1>Cliente</h1>
-
-<p>
-    <a asp-action="Create" class="btn-success">Adicionar novo</a>
-</p>
+<div class="title mt-4 mb-4">
+    <h1>Clientes</h1>
+    <button class="btn btn-success mt-2">
+        <a asp-action="Create" class="text-decoration-none text-white">Adicionar nova cliente</a>
+    </button>
+</div>
 <table class="table">
     <thead>
         <tr>
