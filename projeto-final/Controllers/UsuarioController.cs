@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using projeto_final.Models;
+using BCrypt.Net;
+using NuGet.Protocol.Plugins;
 
 namespace projeto_final.Controllers
 {
@@ -24,22 +26,29 @@ namespace projeto_final.Controllers
                 return View();
             else
             {
-                var verificaLogin = _context.Usuario
-                    .Where(x => x.UsuarioEmail == usuario.UsuarioEmail
-                                && x.UsuarioSenha == usuario.UsuarioSenha)
-                    .FirstOrDefault();
-
-                if (verificaLogin == null)
+                var resultado = Autenticar(usuario);
+                if (resultado)
+                {
+                    var verificaLogin = _context.Usuario.Where(x => x.UsuarioEmail == usuario.UsuarioEmail).FirstOrDefault();
+                    if (verificaLogin == null)
+                    {
+                        ViewBag.Mensagem = "Usuário ou Senha não existe.";
+                        return View();
+                    }
+                    else
+                    {
+                        return View("~/Views/Home/Index.cshtml");
+                    }
+                }
+                else
                 {
                     ViewBag.Mensagem = "Usuário ou Senha não existe.";
                     return View();
                 }
-                else
-                {
-                    return View("~/Views/Home/Index.cshtml");
-                }
+
             }
         }
+
 
         // GET: Usuario
         public async Task<IActionResult> Index()
@@ -80,9 +89,22 @@ namespace projeto_final.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UsuarioNome,UsuarioEmail,UsuarioSenha")] Usuario usuario)
         {
+            // Gere um salt para o bcrypt
+            var salt = BCrypt.Net.BCrypt.GenerateSalt();
+
+            // Gere o hash da senha usando bcrypt e o salt
+            var senhaHash = BCrypt.Net.BCrypt.HashPassword(usuario.UsuarioSenha, salt);
+
+            // Crie uma nova instância do usuário
+            var novoUsuario = new Usuario
+            {
+                UsuarioNome = usuario.UsuarioNome,
+                UsuarioEmail = usuario.UsuarioEmail,
+                UsuarioSenha = senhaHash
+            };
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
+                _context.Add(novoUsuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -181,5 +203,23 @@ namespace projeto_final.Controllers
         {
           return (_context.Usuario?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+        public bool Autenticar(Usuario usuario)
+        {
+            var usuarioDB = _context.Usuario.SingleOrDefault(u => u.UsuarioEmail == usuario.UsuarioEmail);
+            var senha = usuario.UsuarioSenha;
+            // Verifique se a senha fornecida corresponde ao hash no banco de dados
+            bool senhaCorreta = BCrypt.Net.BCrypt.Verify(senha, usuarioDB.UsuarioSenha);
+            if (senhaCorreta)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
+
 }
+
