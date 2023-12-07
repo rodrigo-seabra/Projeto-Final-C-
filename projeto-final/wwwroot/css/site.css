@@ -47,3 +47,17 @@ h1{
 .title{
     text-align:center
 }
+
+.tipoprodutocss{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:2rem;
+    align-items:baseline;
+    align-content:center;
+}
+
+.btnsAdicionais{
+    text-align:center
+}

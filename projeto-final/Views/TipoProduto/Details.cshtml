@@ -4,21 +4,19 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<h1>Detalhes</h1>
+<h1>Detalhes sobre o tipo de produto</h1>
 
 <div>
-    <h4>TipoProduto</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TipoProdutoDescricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TipoProdutoDescricao)
-        </dd>
-    </dl>
+    <section class="row">
+        <div class="tipoprodutocss">
+            <h4>@Html.DisplayNameFor(model => model.TipoProdutoDescricao):</h4>
+             <h5> @Html.DisplayFor(model => model.TipoProdutoDescricao)</h5>
+        </div>
+
+    </section>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+<div class="btnsAdicionais">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
     <a asp-action="Index">Voltar</a>
 </div>
