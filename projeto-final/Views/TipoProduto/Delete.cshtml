@@ -10,14 +10,17 @@
 <div>
     <h4>TipoProduto</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TipoProdutoDescricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TipoProdutoDescricao)
-        </dd>
-    </dl>
+    <section class="row">
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.TipoProdutoDescricao)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.TipoProdutoDescricao)
+            </h5>
+        </div>
+    </section>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />

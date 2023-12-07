@@ -9,44 +9,62 @@
 <div>
     <h4>SaidaProduto</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SaidaProdutoData)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SaidaProdutoData)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SaidaProdutoQuantidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SaidaProdutoQuantidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Produto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Produto.ProdutoNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Usuario.UsuarioNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.ClienteNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TipoSaida)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TipoSaida.TipoSaidaDescricao)
-        </dd>
-    </dl>
+    <section class="row">
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.SaidaProdutoData)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.SaidaProdutoData)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.SaidaProdutoQuantidade)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.SaidaProdutoQuantidade)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.Produto)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.Produto.ProdutoNome)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.Usuario)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.Usuario.UsuarioNome)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.Cliente)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.Cliente.ClienteNome)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.TipoSaida)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.TipoSaida.TipoSaidaDescricao)
+            </h5>
+        </div>
+    </section>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |

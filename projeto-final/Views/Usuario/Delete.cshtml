@@ -10,26 +10,35 @@
 <div>
     <h4>Usuario</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioNome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioEmail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioEmail)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioSenha)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioSenha)
-        </dd>
-    </dl>
+    <section class="row">
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.UsuarioNome)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.UsuarioNome)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.UsuarioEmail)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.UsuarioEmail)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.UsuarioSenha)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.UsuarioSenha)
+            </h5>
+        </div>
+    </section>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />

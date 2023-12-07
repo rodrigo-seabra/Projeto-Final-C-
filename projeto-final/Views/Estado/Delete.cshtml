@@ -10,20 +10,26 @@
 <div>
     <h4>Estado</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EstadoNome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EstadoNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pais)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pais.PaisNome)
-        </dd>
-    </dl>
+    <section class="row">
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.EstadoNome)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.EstadoNome)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.Pais)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.Pais.PaisNome)
+            </h5>
+        </div>
+    </section>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
