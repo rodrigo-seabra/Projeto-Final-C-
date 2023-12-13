@@ -4,11 +4,9 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<h1>Detalhes</h1>
+<h1>Detalhes sobre o @Html.DisplayFor(modelItem => modelItem.ProdutoNome)</h1>
 
 <div>
-    <h4>Produto</h4>
-    <hr />
     <section class="row">
         <div class="tipoprodutocss">
             <h4>
@@ -46,9 +44,10 @@
                 @Html.DisplayFor(model => model.Fornecedor.FornecedorNome)
             </h5>
         </div>
+        <div class="divDetails">
+            <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+            <a asp-action="Index">Voltar</a>
+        </div>
     </section>
 </div>
-<div class="divDetails">
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-    <a asp-action="Index">Voltar</a>
-</div>
+
