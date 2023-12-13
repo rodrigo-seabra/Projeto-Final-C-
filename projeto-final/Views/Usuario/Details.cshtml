@@ -4,10 +4,9 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<h1>Detalhes</h1>
+<h1>Detalhes do @Html.DisplayFor(modelItem => modelItem.UsuarioNome)</h1>
 
 <div>
-    <h4>Usuario</h4>
     <hr />
     <section class="row">
         <div class="tipoprodutocss">
@@ -26,15 +25,6 @@
             </h4>
             <h5>
                 @Html.DisplayFor(model => model.UsuarioEmail)
-            </h5>
-        </div>
-        <div class="tipoprodutocss">
-            <h4>
-                @Html.DisplayNameFor(model => model.UsuarioSenha)
-                :
-            </h4>
-            <h5>
-                @Html.DisplayFor(model => model.UsuarioSenha)
             </h5>
         </div>
     </section>

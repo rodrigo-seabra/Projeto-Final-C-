@@ -4,33 +4,44 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<h1>Detalhes</h1>
+<h1>
+    Detalhes sobre a entrada do : @Html.DisplayFor(model => model.Produto.ProdutoNome)
+</h1>
 
 <div>
-    <h4>EntradaProduto</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EntradaProdutoQuantidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EntradaProdutoQuantidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EntradaProdutoData)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EntradaProdutoData)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Produto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Produto.ProdutoNome)
-        </dd>
-    </dl>
+    <section class="row">
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.EntradaProdutoQuantidade)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.EntradaProdutoQuantidade)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.EntradaProdutoData)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.EntradaProdutoData)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.Produto)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.Produto.ProdutoNome)
+            </h5>
+        </div>
+    </section>
+
 </div>
-<div>
+<div class="divDetails">
     <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
     <a asp-action="Index">Voltar</a>
 </div>

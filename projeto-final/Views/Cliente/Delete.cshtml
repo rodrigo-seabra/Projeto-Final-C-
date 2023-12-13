@@ -4,68 +4,93 @@
     ViewData["Title"] = "Excluir";
 }
 
-<h1>Excluir</h1>
-
-<h3>Você tem certeza que deseja excluir o cliente @Html.DisplayFor(modelItem => modelItem.ClienteNome)</h3>
+<h1>Você tem certeza que deseja excluir o cliente @Html.DisplayFor(modelItem => modelItem.ClienteNome)</h1>
 <div>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteNome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteDataNascimento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteDataNascimento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteCpf)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteCpf)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteEndereco)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteEndereco)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteNumeroCasa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteNumeroCasa)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteBairro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteBairro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteCep)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteCep)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteTelefone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteTelefone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cidade.CidadeNome)
-        </dd>
-    </dl>
+    <section class="row">
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.ClienteNome)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.ClienteNome)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.ClienteDataNascimento)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.ClienteDataNascimento)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.ClienteCpf)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.ClienteCpf)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.ClienteEndereco)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.ClienteEndereco)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.ClienteNumeroCasa)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.ClienteNumeroCasa)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.ClienteBairro)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.ClienteBairro)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.ClienteCep)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.ClienteCep)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.ClienteTelefone)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.ClienteTelefone)
+            </h5>
+        </div>
+        <div class="tipoprodutocss">
+            <h4>
+                @Html.DisplayNameFor(model => model.Cidade)
+                :
+            </h4>
+            <h5>
+                @Html.DisplayFor(model => model.Cidade.CidadeNome)
+            </h5>
+        </div>
+    </section>
     
-    <form asp-action="Delete">
+    <form asp-action="Delete" class="mt-4">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Excluir" class="btn btn-danger" /> |
         <a asp-action="Index">Voltar</a>

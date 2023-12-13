@@ -4,11 +4,9 @@
     ViewData["Title"] = "Excluir";
 }
 
-<h1>Excluir</h1>
+<h1>Você tem certeza que deseja excluir o :@Html.DisplayFor(modelItem => modelItem.UsuarioNome)</h1>
 
-<h3>Você tem certeza que deseja excluir isso?</h3>
 <div>
-    <h4>Usuario</h4>
     <hr />
     <section class="row">
         <div class="tipoprodutocss">
@@ -27,15 +25,6 @@
             </h4>
             <h5>
                 @Html.DisplayFor(model => model.UsuarioEmail)
-            </h5>
-        </div>
-        <div class="tipoprodutocss">
-            <h4>
-                @Html.DisplayNameFor(model => model.UsuarioSenha)
-                :
-            </h4>
-            <h5>
-                @Html.DisplayFor(model => model.UsuarioSenha)
             </h5>
         </div>
     </section>

@@ -6,11 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//builder.Services.AddDbContext<Contexto>
-  //  (options => options.UseSqlServer("Data Source=SP-1491025\\SQLSENAI;Initial Catalog = ProjetoFinal;Integrated Security = True;TrustServerCertificate = True"));
-
 builder.Services.AddDbContext<Contexto>
-    (options => options.UseSqlServer("Data Source=DESKTOP-BAH0590\\SQLSERVER2022;Initial Catalog = Login;Integrated Security = True;TrustServerCertificate = True"));
+    (options => options.UseSqlServer("Data Source=SP-1491025\\SQLSENAI;Initial Catalog = ProjetoFinal;Integrated Security = True;TrustServerCertificate = True"));
+
+//builder.Services.AddDbContext<Contexto>
+   // (options => options.UseSqlServer("Data Source=DESKTOP-BAH0590\\SQLSERVER2022;Initial Catalog = Login;Integrated Security = True;TrustServerCertificate = True"));
 
 var app = builder.Build();
 
